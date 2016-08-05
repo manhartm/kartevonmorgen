@@ -11,6 +11,7 @@ Explain   = require "./LandingExplain"
 URLs      = require "../constants/URLs"
 V         = require "../constants/PanelView"
 { pure }  = require "recompose"
+i18n      = require "../i18n"
 
 { div, h1, h2, h3, h4, br, input, button, ul, li, a, img, p, strong, hr, i } = React.DOM
 
@@ -49,7 +50,7 @@ module.exports = pure React.createClass
             div className:"menu pure-menu pure-menu-horizontal",
               ul className:"pure-menu-list",
                 li className:"pure-menu-item",
-                  a onClick: (-> onClick 'map'), href:"#", className:"pure-menu-link", "Karte"
+                  a onClick: (-> onClick 'map'), href:"#", className:"pure-menu-link", i18n.t("karte")
                 li className:"pure-menu-item", "|"
                 li className:"pure-menu-item",
                   a onClick: (-> onClick 'new'), href:"#", className:"pure-menu-link", "Eintrag hinzufügen"
