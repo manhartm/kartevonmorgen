@@ -1,0 +1,1 @@
+http://blog.arkency.com/2015/03/use-your-gettext-translations-in-your-react-components/
