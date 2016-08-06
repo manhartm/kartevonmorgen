@@ -137,11 +137,12 @@ module.exports = pure React.createClass
 
               when V.JOIN
                 div null,
-                  h3 null, t "join.heading"
+                  h3 null, t "join.heading.1"
 
                   p null, t "join.text.1"
                   p null,
                     a href: URLs.JOB_ADS.link, URLs.JOB_ADS.name
+                  h3 null, t "join.heading.2"
                   p null, t "join.text.2"
                   p null, t "join.text.3"
                     br null

@@ -87,7 +87,10 @@
 		"ending" : "Dankend, das Team von morgen"
 	},
 	"join" : {
-		"heading" : "Werde Teil unseres Teams",
+		"heading" :{
+			"1":"Werde Teil unseres Teams",
+			"2":"Werde Regional- oder Themenpilot"
+		},
 		"text" : {
 			"1" : "Wir sind ein deutschlandweites Team und immer auf der Suche nach neuen Mitgliedern! Unsere aktuellen Ausschreibungen findest du hier:",
 			"2" : "Wir suchen Regional- und Themenpiloten Stark lokal: als direkter Ansprechpartner vor Ort, sicherst du die Qualität der Karteneinträge, organisierst z.B. Aktionen und Workshops und zeigst deine Stadt von ihrer besten Seite!",
