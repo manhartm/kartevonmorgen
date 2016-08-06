@@ -182,7 +182,7 @@ module.exports = pure React.createClass
                     onClick: -> dispatch Actions.showNewEntry()
                     className:"pure-u-1",
                       i className: "fa fa-plus"
-                      t "menu.addEntry"
+                      t "addEntry"
                 when V.ENTRY
                   [
                     li
@@ -208,7 +208,7 @@ module.exports = pure React.createClass
                         @refs.form.submit()
                       ),
                         i className: "fa fa-floppy-o"
-                        "speichern"
+                        t "entryForm.save"
                     li
                       key: "cancel"
                       className:"pure-u-1-2",
@@ -219,7 +219,7 @@ module.exports = pure React.createClass
                           when V.EDIT then Actions.cancelEdit()
                       ),
                         i className: "fa fa-ban"
-                        "abbrechen"
+                        t "entryForm.cancel"
                   ]
           div className:"content",
 

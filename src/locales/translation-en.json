@@ -1,77 +1,79 @@
 {
 	"menu" : {
-		"map" : "Karte",
-		"addEntry" : "Eintrag hinzufügen",
+		"map" : "Map",
+		"addEntry" : "New Entry",
 		"workshops" : "Workshops",
 		"news" : "News",
-		"contact" : "Kontakt",
-		"donate" : "Spenden"
+		"contact" : "Contact",
+		"donate" : "Donate"
 	},
-	"addEntry":"Eintrag hinzufügen",
-	"slogan" : "Alles gute auf einer Karte",
-	"discover" : "Welchen Ort möchtest du entdecken?",
+	"addEntry":"Add a new entry",
+	"slogan" : "Mapping for Good",
+	"discover" : "Search for a location",
 	"entryForm":{
-		"choseCategory":"- Kategorie auswählen -",
-		"location":"Ort",
-		"clickMap":"(auf Karte klicken)",
-		"contact":"Kontakt",
-		"iHaveRead":"Ich habe die",
-		"creativeCommonsAccepted":"Bestimmungen der Creative-Commons Lizenz CC0 gelesen und akzeptiere sie",
-		"license":"Lizenz",
-		"title":"Titel",
-		"description":"Beschreibung",
+		"choseCategory":"- Select category -",
+		"location":"Location",
+		"clickMap":"(click on the map)",
+		"contact":"Contact",
+		"iHaveRead":"I have read and accept the Terms of the ",
+		"creativeCommonsAccepted":"Creative-Commons Lizenz CC0",
+		"license":"License",
+		"title":"Title",
+		"description":"Description",
 		"homepage":"Homepage",
-		"phone":"Telefon",
-		"street":"Straße",
-		"city":"Stadt",
-		"zip":"PLZ",
-		"email":"E-Mailadresse",
-		"cancel":"abbrechen",
-		"save":"speichern"
-	}
+		"phone":"Phone",
+		"street":"Address",
+		"city":"City",
+		"zip":"ZIP Code",
+		"email":"email",
+		"cancel":"cancel",
+		"save":"save"
+		"edit":"New Entry",
+		"new":"Edit Entry"
+	},
 	"landingExplain" : {
 		"chapter1" : {
-			"heading" : "Die Welt steckt voller Entdecker. Und voller Orte, die darauf warten entdeckt zu werden.",
+			"heading" : "The world is full of explorers, and full of things to be explored.",
 			"paragraph1" : {
-				"heading" : "Entdecke Orte von ihren besten Seiten.",
-				"text" : "Unsere Karte zeigt dir zukunftsorientierte Initiativen, Unternehmen und bald auch Events direkt in deiner Umgebung."
+				"heading" : "Discover places from an inspiring point of view.",
+				"text" : "Our map invites you to explore forward-thinking projects, companies and soon to come events in your immediate surrounding."
 			},
 			"paragraph2" : {
-				"heading" : "Sei dabei!",
-				"text" : "Du hast an einer Initiative besonderes Interesse? Bei uns findest du die nötigen Informationen, um Kontakt aufzunehmen und vorbei zu schauen."
+				"heading" : "Take part! ",
+				"text" : "Find all the information you need to get in touch with projects you want to engage with. Stop by to say Hello! "
 			},
 			"paragraph3" : {
-				"heading" : "Gestalte die Welt von morgen.",
-				"text" : "Gemeinsam mit dir möchten wir den positiven Wandel unserer Gesellschaft sichtbar und erfahrbar machen."
+				"heading" : "Let’s create a world for tomorrow.",
+				"text" : "Together, we want to show and embrace the positive change in our society."
 			}
 		},
 		"chapter2" : {
-			"heading" : "Wie funktioniert die Karte von morgen?"
+			"heading" : "How to use the map von morgen"
 		},
 		"chapter3" : {
-			"heading" : "Die Vision von morgen.",
+			"heading" : "We have a vision",
 			"text" : {
-				"1" : "von morgen fördert Kreativität, Umweltfreundlichkeit und<\br>gemeinsames Handeln im bunten Feld des gesellschaftlichen Wandels.",
-				"2" : "von morgen hat die Vision einer intakten Welt, in der die Menschen</br>miteinander ein selbstbestimmtes, glückliches und umweltbewusstes Leben führen.</br>Das Ziel: eine menschliche Zukunft."
+				"1" : "von morgen supports creativity, sustainability and joint action.",
+				"2" : "We believe in a modern society in wich we all can embrace a self-determined, contend and environmental-friendly life. Our goal: a benevolent future."
 			}
 		},
 		"chapter4" : {
-			"heading" : "Möchtest du dabei sein?",
+			"heading" : "Are you with us?",
 			"text" : {
-				"1" : "Unterstütze</br>unser Projekt",
-				"2" : "Wir suchen Regional-<br>und Themenpiloten",
-				"3" : "Werde Teil</br>unseres Teams"
+				"1" : "Support our project",
+				"2" : "Become a local scout",
+				"3" : "Join our team"
 			},
-			"learnMore" : "mehr erfahren"
+			"learnMore" : "more"
 		},
 		"chapter5" : {
-			"heading" : "Das Team von morgen",
+			"heading" : "Our team",
 			"text" : {
-				"1" : "Wir freuen uns über neue Teammitglieder!"
+				"1" : "We are always looking for new members!"
 			}
 		},
 		"chapter6" : {
-			"heading" : "Unsere Partner"
+			"heading" : "Our partners"
 		}
 	},
 	"donate" : {
@@ -121,15 +123,15 @@
 		}
 	},
 	"category":{
-		"initiative":"Initiative",
+		"initiative":"Project",
 		"Event":"Event",
-		"company":"Unternehmen",
+		"company":"Company",
 	}
 	"footer" : {
-		"heading" : "Wir zeigen Menschen, die Gutes tun wollen, wo es Gutes gibt.",
-		"contact" : "Kontakt: ",
+		"heading" : "Tomorrow starts today.",
+		"contact" : "Contact: ",
 		"socialMedia" : "Social Media: ",
 		"openSource" : "Open Source: ",
-		"impressum" : "Impressum"
+		"impressum" : "Imprint: "
 	}
 }

@@ -59,14 +59,14 @@ Form = React.createClass
     fieldProps = udeep FIELD_PROPS, fields
 
     classes =
-      title       : className: "pure-input-1", placeholder: "Titel"
-      description : className: "pure-input-1", placeholder: "Beschreibung"
-      homepage    : className: "pure-input-1", placeholder: "Homepage"
-      telephone   : className: "pure-input-1", placeholder: "Telefon"
-      street      : className: "pure-input-1", placeholder: "Straße"
-      city        : className: "pure-input-1", placeholder: "Stadt"
-      zip         : className: "pure-input-1", placeholder: "PLZ"
-      email       : className: "pure-input-1", placeholder: "eMail"
+      title       : className: "pure-input-1", placeholder: t "entryForm.title"
+      description : className: "pure-input-1", placeholder: t "entryForm.description"
+      homepage    : className: "pure-input-1", placeholder: t "entryForm.homepage"
+      telephone   : className: "pure-input-1", placeholder: t "entryForm.phone"
+      street      : className: "pure-input-1", placeholder: t "entryForm.street"
+      city        : className: "pure-input-1", placeholder: t "entryForm.city"
+      zip         : className: "pure-input-1", placeholder: t "entryForm.zip"
+      email       : className: "pure-input-1", placeholder: t "entryForm.email"
       lat         : className: "pure-input-1"
       lng         : className: "pure-input-1"
       category    : className: "pure-input-1"
@@ -81,7 +81,7 @@ Form = React.createClass
       className: "add-entry-form",
       action: 'javascript:void();'
       },
-      h3 null, if isEdit then "Eintrag bearbeiten" else "Neuer Eintrag"
+      h3 null, if isEdit then t "entryForm.edit" else t "entryForm.new"
       @props.error and div className: "err",
         "Der Eintrag konnte nicht gespeichert werden: #{@props.error.message}"
       (not @props.error) and @props.submitFailed and div className: "err",
@@ -92,10 +92,10 @@ Form = React.createClass
 
         fieldset null,
           select fieldProps.category,
-            option value: -1,"- Kategorie auswählen -"
-            option value: IDS.INITIATIVE, "Initiative"
-            option value: IDS.EVENT,      "Event"
-            option value: IDS.COMPANY,    "Unternehmen"
+            option value: -1, t "entryForm.choseCategory"
+            option value: IDS.INITIATIVE, t "category.initiative"
+            option value: IDS.EVENT,      t "category.event"
+            option value: IDS.COMPANY,    t "category.company"
           category.error and category.touched and div className: "err",
             category.error
 
@@ -109,8 +109,8 @@ Form = React.createClass
 
         fieldset null,
           legend null,
-            span className:"text","Ort"
-            span className:"desc","(auf Karte klicken)"
+            span className:"text",t "entryForm.location"
+            span className:"desc",t "entryForm.clickMap"
 
           div className: "pure-g",
             label className: "pure-u-2-24",
@@ -138,7 +138,7 @@ Form = React.createClass
                 city.error
 
         fieldset null,
-          legend null, "Kontakt"
+          legend null, t "entryForm.contact"
           div className: "pure-g",
             label className: "pure-u-2-24",
               i className: "fa fa-globe"
@@ -161,7 +161,7 @@ Form = React.createClass
 
         fieldset null,
           legend null,
-            span className:"text","Lizenz"
+            span className:"text",t "entryForm.license"
             span className:"desc","(CC-0)"
           div className: "pure-g license",
             label className: "pure-u-2-24",
@@ -171,10 +171,9 @@ Form = React.createClass
             div className: "pure-u-20-24",
               license.error and license.touched and div className:"err",
                 license.error
-              " Ich habe die "
+              t "entryForm.iHaveRead"
               a href: CC_LICENSE.link,
-                "Bestimmungen der Creative-Commons Lizenz CC0"
-              " gelesen und akzeptiere sie"
+                t "entryForm.creativeCommonsAccepted"
 
 module.exports = reduxForm(
   form            : EDIT.id
