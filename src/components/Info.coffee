@@ -13,51 +13,17 @@ module.exports = pure React.createClass
   displayName: "Info"
 
   render: ->
+    t = (x) -> x
     div className: "info",
-      h2 null, "Das Projekt"
-      p null,
-        """
-        Unsere interaktive Karte zeigt dir Orte in deiner Umgebung,
-        an denen man sich schon heute für eine Welt von morgen einsetzt.
-        """
-      p null,
-        """
-        Du hast eine Initiative, für die du Mitstreiter suchst?
-        Du kennst ein Unternehmen, das nachhaltig wirtschaftet?
-        """
-      p null,
-        """
-        Auf unserer Website kannst du andere darauf
-        aufmerksam machen – und dich so für eine Sache
-        einsetzen, die dir persönlich am Herzen liegt.
-        """
-      p null,
-        """
-        Wir sind auf der Suche nach vielfältigen Projekten, Initiativen und
-        Unternehmen, die den aktuellen sozialen, ökologischen und ökonomischen
-        Umbrüchen alternativ entgegen wirken.
-        Ihnen möchten wir einen gemeinsamen Online-Auftritt und damit eine
-        erhöhte Aufmerksamkeit ermöglichen.
-        """
+      h2 null, t "info.heading"
+      p null, t "info.text.1"
+      p null, t "info.text.2"
+      p null, t "info.text.3"
+      p null, t "info.text.4"
 
-      p null,
-        """
-        Nach dem Wiki-Prinzip können alle Nutzer, Initiativen und Unternehmen
-        sich und andere auf der Karte eintragen und so ihre Mitmenschen
-        erreichen.
-        Doch von morgen ist mehr als eine Onlineplattform: Regionalpiloten
-        sichern vor Ort die Qualität der Karteneinträge und haben neben einer
-        redaktionellen Funktion die Aufgabe durch Bildungsveranstaltungen und
-        Aktionen den regionalen Austausch zwischen Bürgern, Initiativen und
-        Unternehmen zu stärken.
-        """
+      p null, t "info.text.5"
 
-      p null,
-        """
-        von morgen fragt nach Werten, die unsere Gesellschaft fundieren und
-        bewegen.
-        Wir zeigen Menschen, die Guten tun, wo es Gutes gibt.
-        """
+      p null, t "info.text.6"
       p null,
         i className: "fa fa-globe"
         " "
@@ -76,15 +42,12 @@ module.exports = pure React.createClass
         a href: URLs.REPOSITORY.link, URLs.REPOSITORY.name
       br null
       br null
-      h2 null, "Wir lieben Open Source!"
-      p null,
-        "Wir wollen mit gutem Beispiel vorangehen und entwickeln daher"
-        "die Software transparent und offen."
-        "Den Quellcode des Gemeinschaftsprojekts findest du unter:"
+      h2 null, t "info.paragraph1.heading"
+      p null, t "info.paragraph1.text"
       p null, a href: URLs.REPOSITORY.link, URLs.REPOSITORY.name
 
       p className: "version",
-        "Version dieses Clients: v#{pkg.version}"
+        (t "info.clientVersion")+" v#{pkg.version}"
       if (sv = @props.server?.version)?
         p className: "version",
-          "Version des Servers: v#{sv}"
+          (t "info.clientVersion")+" v#{sv}"

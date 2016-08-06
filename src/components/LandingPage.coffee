@@ -1,16 +1,17 @@
 # Copyright (c) 2015 - 2016 Markus Kohlhase <mail@markus-kohlhase.de>
 
-React     = require "react"
-T         = React.PropTypes
-logo      = require "../img/logo.png"
-CityList  = require "./CityList"
-Info      = require "./Info"
-Workshop  = require "./Workshop"
-Imprint   = require "./Imprint"
-Explain   = require "./LandingExplain"
-URLs      = require "../constants/URLs"
-V         = require "../constants/PanelView"
-{ pure }  = require "recompose"
+React         = require "react"
+T             = React.PropTypes
+logo          = require "../img/logo.png"
+CityList      = require "./CityList"
+Info          = require "./Info"
+Workshop      = require "./Workshop"
+Imprint       = require "./Imprint"
+Explain       = require "./LandingExplain"
+URLs          = require "../constants/URLs"
+V             = require "../constants/PanelView"
+{ pure }      = require "recompose"
+#{ translate } = require 'react-i18next';
 
 { div, h1, h2, h3, h4, br, input, button, ul, li, a, img, p, strong, hr, i } = React.DOM
 
@@ -37,7 +38,8 @@ module.exports = pure React.createClass
       when "Enter"  then @props.onSelection? @props.cities?[0]
 
   render: ->
-    { t } = @props
+#    { t } = @props
+    t = (x) -> x
     { content, searchText, cities, onSelection } = @props
     onClick = @props.onMenuItemClick
     div className: "landing",
@@ -50,26 +52,26 @@ module.exports = pure React.createClass
             div className:"menu pure-menu pure-menu-horizontal",
               ul className:"pure-menu-list",
                 li className:"pure-menu-item",
-                  a onClick: (-> onClick 'map'), href:"#", className:"pure-menu-link",  t "karte"
+                  a onClick: (-> onClick 'map'), href:"#", className:"pure-menu-link", t "menu.map"
                 li className:"pure-menu-item", "|"
                 li className:"pure-menu-item",
-                  a onClick: (-> onClick 'new'), href:"#", className:"pure-menu-link", "Eintrag hinzufügen"
+                  a onClick: (-> onClick 'new'), href:"#", className:"pure-menu-link", t "menu.addEntry"
                 li className:"pure-menu-item", "|"
                 li className:"pure-menu-item",
-                  a onClick: (-> onClick V.WORKSHOP), href:"#", className:"pure-menu-link", "Workshops"
+                  a onClick: (-> onClick V.WORKSHOP), href:"#", className:"pure-menu-link", t "menu.workshops"
                 li className:"pure-menu-item", "|"
                 li className:"pure-menu-item",
-                  a href:"https://www.facebook.com/vonmorgen", className:"pure-menu-link", "News"
+                  a href:"https://www.facebook.com/vonmorgen", className:"pure-menu-link", t "menu.news"
                 li className:"pure-menu-item", "|"
                 li className:"pure-menu-item",
-                  a onClick: (-> onClick V.INFO), href:"#", className:"pure-menu-link", "Kontakt"
+                  a onClick: (-> onClick V.INFO), href:"#", className:"pure-menu-link", t "menu.contact"
                 li className:"pure-menu-item", "|"
                 li className:"pure-menu-item",
-                  a onClick: (-> onClick V.DONATE), href:"#", className:"pure-menu-link", "Spenden"
+                  a onClick: (-> onClick V.DONATE), href:"#", className:"pure-menu-link", t "menu.donate"
 
       div className: "search",
         div className: "content",
-          h1 null, "Alles Gute auf einer Karte"
+          h1 null, t "slogan"
           div className:"place-search",
             div className: "pure-g pure-form",
               input
@@ -78,7 +80,7 @@ module.exports = pure React.createClass
                 onKeyUp     : @onKeyUp
                 value       : searchText or ''
                 type        : 'text'
-                placeholder : "Welchen Ort möchtest du entdecken?"
+                placeholder : t "discover"
               if cities?.length > 0
                 div className: "pure-u-1",
                   React.createElement CityList,
@@ -124,75 +126,39 @@ module.exports = pure React.createClass
 
               when V.DONATE
                 div null,
-                  h2 null, "Etwas Gutes für morgen tun."
+                  h2 null, t "donate.heading"
+                  p null, t "donate.text.1"
+                  p null, t "donate.text.2"
                   p null,
-                    """
-                    Die Plattform von morgen finanziert sich über Fördermittel
-                    verschiedener Programme und Wettbewerbe, als auch über Spenden.
-                    Wir, das Team von morgen, arbeiten ehrenamtlich.
-                    """
-
-                  p null,
-                    """
-                    Die Beiträge möchten wir für die Weiterentwicklung
-                    der Plattform verwenden.
-                    Verschieden Features sind in Planung,
-                    u.a. die Themenkarte zur Einbettung in eigene
-                    Websites und den Positivfaktoren - dem
-                    gemeinwohl-orientierten Bewertungssytem der einzelnen Orte.
-                    """
-                  p null,
-                    "Hier geht es zu unserer Crowdfunding-Kampagne: "
+                    t "donate.text.3"
                     a href: URLs.DONATE.link, URLs.DONATE.name
-                  p null,
-                    """
-                    Wir freuen uns über jeden kleinen und großen Beitrag
-                    und hoffen auch bald in deiner Stadt verfügbar zu
-                    sein. Auf bald!
-                    """
-                  p null, "Dankend, das Team von morgen"
+                  p null, t "donate.text.4"
+                  p null, t "donate.ending"
 
               when V.JOIN
                 div null,
-                  h3 null, "Werde Teil unseres Teams"
+                  h3 null, t "join.heading"
 
-                  p null,
-                    """
-                    Wir sind ein deutschlandweites Team und immer auf der
-                    Suche nach neuen Mitgliedern!
-                    Unsere aktuellen Ausschreibungen findest du hier:
-                    """
+                  p null, t "join.text.1"
                   p null,
                     a href: URLs.JOB_ADS.link, URLs.JOB_ADS.name
-                  p null,
-                    """
-                    Wir suchen Regional- und Themenpiloten
-                    Stark lokal: als direkter Ansprechpartner vor Ort,
-                    sicherst du die Qualität der Karteneinträge,
-                    organisierst z.B. Aktionen und Workshops und zeigst
-                    deine Stadt von ihrer besten Seite!
-                    """
-
-                  p null,
-                    """
-                    Du hast Fragen oder Interesse? Wir freuen uns von dir zu hören:
-                    """
+                  p null, t "join.text.2"
+                  p null, t "join.text.3"
                     br null
                     a href: "mailto:netzwerk@kartevonmorgen.org",
                       "netzwerk@kartevonmorgen.org"
 
       div className: "footer",
-        h3 null,
-          "Wir zeigen Menschen, die Gutes tun wollen, wo es Gutes gibt."
+        h3 null, t "footer.heading"
         p null,
-          "Kontakt: "
+          t "footer.contact"
           a href: URLs.MAIL.link, URLs.MAIL.name
           br null
-          "Social Media: "
+          t "footer.socialMedia"
           a href: URLs.FACEBOOK.link, URLs.FACEBOOK.name,
           br null
-          "Open Source: "
+          t "footer.openSource"
           a href: URLs.REPOSITORY.link, URLs.REPOSITORY.name
         p null,
           a href:"#", onClick: (-> onClick V.IMPRINT),
-            "Impressum"
+            t "footer.impressum"

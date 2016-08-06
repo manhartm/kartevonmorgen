@@ -41,7 +41,7 @@ module.exports = pure React.createClass
     growler  : T.object.isRequired
 
   render: ->
-
+    t = (x) -> x
     { dispatch, search, view, entries, map, form, growler } = @props
 
     { highlight, addresses, cities } = search
@@ -182,7 +182,7 @@ module.exports = pure React.createClass
                     onClick: -> dispatch Actions.showNewEntry()
                     className:"pure-u-1",
                       i className: "fa fa-plus"
-                      "Eintrag hinzufügen"
+                      t "menu.addEntry"
                 when V.ENTRY
                   [
                     li

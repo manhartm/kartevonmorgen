@@ -15,32 +15,29 @@ module.exports = pure React.createClass
     onClick  : T.func
 
   render: ->
+    t = (x) -> x
     { onClick } = @props
     div null,
-      h2 null, "Die Welt steckt voller Entdecker. Und voller Orte, die darauf warten entdeckt zu werden."
+      h2 null, t "landingExplain.chapter1.heading"
       div
       img style: {float: "left"}, src: require "../img/lp_illu1.jpg"
       div style: {marginTop: "200px"},
-        h3 null, "Entdecke Orte von ihren besten Seiten."
-        p null, "Unsere Karte zeigt dir zukunftsorientierte Initiativen," +
-            " Unternehmen und bald auch Events direkt in deiner Umgebung."
+        h3 null, t "landingExplain.chapter1.paragraph1.heading"
+        p null, t "landingExplain.chapter1.paragraph1.text"
       div style: clear: "both"
       img style: {float: "right"}, src: require "../img/lp_illu2.jpg"
       div style: {marginTop: "200px"},
-        h3 null, "Sei dabei!"
-        p null, "Du hast an einer Initiative besonderes Interesse?" +
-            " Bei uns findest du die nötigen Informationen," +
-            " um Kontakt aufzunehmen und vorbei zu schauen."
+        h3 null,  t "landingExplain.chapter1.paragraph2.heading"
+        p null, t "landingExplain.chapter1.paragraph2.text"
       div style: clear: "both"
       img style: {float: "left"}, src: require "../img/lp_illu3.jpg"
       div style: {marginTop: "200px"},
-        h3 null, "Gestalte die Welt von morgen."
-        p null, "Gemeinsam mit dir möchten wir den positiven Wandel " +
-            "unserer Gesellschaft sichtbar und erfahrbar machen."
+        h3 null, t "landingExplain.chapter1.paragraph3.heading"
+        p null, t "landingExplain.chapter1.paragraph3.text"
       div style: clear: "both"
       hr id: "tutorial"
 
-      h2 null, "Wie funktioniert die Karte von morgen?"
+      h2 null, t "landingExplain.chapter2.heading"
       div className: "tutorial",
         img src: require "../img/tutorial/1.jpg"
         img src: require "../img/tutorial/2.jpg"
@@ -52,45 +49,26 @@ module.exports = pure React.createClass
       div style: overflow: "visible",
         img style: {width: "100%"}, src: require "../img/postkarte.jpg"
 
-      h2 null, "Die Vision von morgen"
-      p null,
-        "von morgen fördert Kreativität, Umweltfreundlichkeit und"
-        br null
-        "gemeinsames Handeln im bunten Feld des gesellschaftlichen Wandels."
-      p null,
-        "von morgen hat die Vision einer intakten Welt, in der die Menschen"
-        br null
-        "miteinander ein selbstbestimmtes, glückliches und umweltbewusstes Leben führen."
-        br null
-        "Das Ziel: eine menschliche Zukunft."
-
+      h2 null, t "landingExplain.chapter3.heading"
+      p null, t "landingExplain.chapter3.text.1"
+      p null, t "landingExplain.chapter3.text.2"
       hr null
-      h2 null,
-        "Möchtest du dabei sein?",
+      h2 null, t "landingExplain.chapter4.heading"
       div style: float: "left", paddingTop: "1px",
-        h4 null,
-          "Unterstütze",
-          br null
-          "unser Projekt"
+        h4 null, t "landingExplain.chapter4.text.1"
         p null, ""
-        a href: "#", onClick: (-> onClick V.DONATE), "mehr erfahren"
+        a href: "#", onClick: (-> onClick V.DONATE), t "landingExplain.chapter4.learnMore"
       div style: float: "right", paddingTop: "1px",
-        h4 null,
-          "Wir suchen Regional-",
-          br null
-          "und Themenpiloten"
+        h4 null, t "landingExplain.chapter4.text.1"
         p null, ""
-        a href: "#", onClick: (-> onClick V.JOIN), "mehr erfahren"
+        a href: "#", onClick: (-> onClick V.JOIN), t "landingExplain.chapter4.learnMore"
       div style: paddingTop: "1px",
-        h4 null,
-          "Werde Teil",
-          br null
-          "unseres Teams"
+        h4 null, t "landingExplain.chapter4.text.1"
         p null, ""
-        a href: "#", onClick: (-> onClick V.JOIN), "mehr erfahren"
+        a href: "#", onClick: (-> onClick V.JOIN), t "landingExplain.chapter4.learnMore"
 
       hr null
-      h2 null, "Das Team von morgen"
+      h2 null, t "landingExplain.chapter5.heading"
 
       div className: "teamMember",
         div className: "circle blue",
@@ -160,13 +138,11 @@ module.exports = pure React.createClass
       div className: "teamMember",
         div className: "circle blue",
           img className: "teamImage", src: require "../img/team/placeholder_4.png"
-        div null, "Wir freuen uns über neue"
-        div null, "Teammitglieder!"
+        div null, t "landingExplain.chapter5.text.1"
 
       hr null
 
-      h2 null,
-        "Unsere Partner",
+      h2 null,t "landingExplain.chapter6.heading",
       a href:"http://germany.ashoka.org",
         img className: "partnerLogo", src: require "../img/Pep.png"
       a href:"https://www.boell.de/de",

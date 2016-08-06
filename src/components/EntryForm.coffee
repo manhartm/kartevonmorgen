@@ -51,6 +51,7 @@ Form = React.createClass
     isEdit        : T.bool
 
   render: ->
+    t = (x) -> x
     { fields, handleSubmit, onCancel, isEdit } = @props
     { title, description, homepage, telephone, lat, lng, category,
       city, zip, street, email, license } = fields

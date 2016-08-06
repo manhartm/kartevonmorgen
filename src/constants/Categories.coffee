@@ -18,10 +18,10 @@ c.CSS_CLASS_SIZE = {}
 c.CSS_CLASS_SIZE[c.IDS.INITIATIVE] = "pure-u-8-24"
 c.CSS_CLASS_SIZE[c.IDS.EVENT]      = "pure-u-7-24"
 c.CSS_CLASS_SIZE[c.IDS.COMPANY]    = "pure-u-9-24"
-
+t = (x) -> x
 c.NAMES = {}
-c.NAMES[c.IDS.INITIATIVE]  = "Initiative"
-c.NAMES[c.IDS.EVENT]       = "Event"
-c.NAMES[c.IDS.COMPANY]     = "Unternehmen"
+c.NAMES[c.IDS.INITIATIVE]  = t "category.initiative"
+c.NAMES[c.IDS.EVENT]       = t "category.event"
+c.NAMES[c.IDS.COMPANY]     = t "category.company"
 
 module.exports = c
