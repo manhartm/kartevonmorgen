@@ -15,7 +15,9 @@ module.exports = pure React.createClass
   render: ->
     t = (x) -> x
     div className: "info",
-      h3 null, t "workshop.heading"
+      h2 null, t "workshop.heading"
+
+      p null, t "workshop.text"
 
       h2 null, t "workshop.paragraph1.heading"
 
